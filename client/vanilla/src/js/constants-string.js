@@ -1,6 +1,6 @@
 let url;
 if (process.env.NODE_ENV === "production") {
-  url = "https://chat-node-js-backend.glitch.me/";
+  url = "https://chat-app-vanilla.netlify.app/";
 } else {
   url = "http://localhost:3001/";
 }
