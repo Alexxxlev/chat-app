@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+  .burger {
+    padding: 0;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .chat {
+    display: flex;
+    font-size: 0.9rem;
+
+    &__content {
+      width: 100%;
+    }
+
+    &__sidebar {
+      width: var(--sidebar-width);
+      position: fixed;
+    }
+
+    &__user-list {
+      padding: 0.8rem 0.5rem;
+    }
+
+    &__messages-wrapper {
+      height: calc(100vh - var(--chat-composer-height) - 0.5rem);
+    }
+
+    &__composer {
+      margin: 0 auto 0.5rem;
+      padding: 0 1rem;
+    }
+
+    &__user-avatar--normal {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__user-avatar--mini {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__current-user {
+      padding: 0.8rem 0.5rem;
+    }
+
+    &__message-time {
+      font-size: .7rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+
+    &__btn {
+      border-radius: 1.2rem;
+    }
+  }
+}

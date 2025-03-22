@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Чат | Общение</title>
+</head>
+
+<body class="chat">
+  <button class="burger">
+    <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 7C3 6.44771 3.44772 6 4 6H24C24.5523 6 25 6.44771 25 7C25 7.55229 24.5523 8 24 8H4C3.44772 8 3 7.55229 3 7Z"
+        fill="#5e503f" />
+      <path
+        d="M3 14C3 13.4477 3.44772 13 4 13H24C24.5523 13 25 13.4477 25 14C25 14.5523 24.5523 15 24 15H4C3.44772 15 3 14.5523 3 14Z"
+        fill="#5e503f" />
+      <path
+        d="M4 20C3.44772 20 3 20.4477 3 21C3 21.5523 3.44772 22 4 22H24C24.5523 22 25 21.5523 25 21C25 20.4477 24.5523 20 24 20H4Z"
+        fill="#5e503f" />
+    </svg>
+  </button>
+
+  <aside class="chat__sidebar">
+    <header class="chat__header">
+      <span class="chat__online-text">Online пользователей: </span>
+      <span class="chat__online-count">0</span>
+    </header>
+
+    <div class="chat__user-list-wrapper">
+      <ul class="chat__user-list"></ul>
+    </div>
+
+    <footer class="chat__current-user">
+      <p class="chat__user-name">Ваше имя</p>
+      <img class="chat__user-avatar chat__user-avatar--normal" src="./def-ava.png" alt="аватарка">
+    </footer>
+  </aside>
+
+  <main class="chat__content">
+    <div class="chat__messages-wrapper">
+      <ul class="chat__messages"></ul>
+    </div>
+
+    <div class="chat__composer">
+      <form class="chat__message-form">
+        <textarea class="chat__message-input" name="text" placeholder="Напишите сообщение..."
+          aria-label="Поле для ввода сообщения"></textarea>
+        <div class="chat__actions">
+          <div class="chat__file-upload">
+            <p class="chat__file-preview"></p>
+            <label class="chat__file-label" for="send-image" aria-label="Прикрепить картинку">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 14 20" fill="none">
+                <path
+                  d="M7 20c-1.856-.002-3.635-.7-4.947-1.94C.74 16.819.003 15.137 0 13.383V4.828a4.536 4.536 0 0 1 .365-1.843 4.75 4.75 0 0 1 1.087-1.567A5.065 5.065 0 0 1 3.096.368a5.293 5.293 0 0 1 3.888 0c.616.244 1.174.6 1.643 1.05.469.45.839.982 1.088 1.567.25.586.373 1.212.364 1.843v8.555a2.837 2.837 0 0 1-.92 2.027A3.174 3.174 0 0 1 7 16.245c-.807 0-1.582-.3-2.158-.835a2.837 2.837 0 0 1-.92-2.027v-6.22a1.119 1.119 0 1 1 2.237 0v6.22a.777.777 0 0 0 .256.547.868.868 0 0 0 .585.224c.219 0 .429-.08.586-.224a.777.777 0 0 0 .256-.546V4.828A2.522 2.522 0 0 0 7.643 3.8a2.64 2.64 0 0 0-.604-.876 2.816 2.816 0 0 0-.915-.587 2.943 2.943 0 0 0-2.168 0 2.816 2.816 0 0 0-.916.587 2.64 2.64 0 0 0-.604.876 2.522 2.522 0 0 0-.198 1.028v8.555c0 1.194.501 2.339 1.394 3.183A4.906 4.906 0 0 0 7 17.885a4.906 4.906 0 0 0 3.367-1.319 4.382 4.382 0 0 0 1.395-3.183v-6.22a1.119 1.119 0 0 1 2.237 0v6.22c-.002 1.754-.74 3.436-2.052 4.677C10.635 19.3 8.856 19.998 7 20z"
+                  fill="#5e503f"></path>
+              </svg>
+            </label>
+            <input class="chat__file-input" id="send-image" type="file" accept=".png,.jpeg,.ico,.gif,.jpg">
+          </div>
+          <button class="chat__send-button" id="send-message" aria-label="Отправить сообщение">
+            <div class="chat__send-button-icon">
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7 16c-.595 0-1.077-.462-1.077-1.032V1.032C5.923.462 6.405 0 7 0s1.077.462 1.077 1.032v13.936C8.077 15.538 7.595 16 7 16z"
+                  fill="#fff"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M.315 7.44a1.002 1.002 0 0 1 0-1.46L6.238.302a1.11 1.11 0 0 1 1.523 0c.421.403.421 1.057 0 1.46L1.838 7.44a1.11 1.11 0 0 1-1.523 0z"
+                  fill="#fff"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13.685 7.44a1.11 1.11 0 0 1-1.523 0L6.238 1.762a1.002 1.002 0 0 1 0-1.46 1.11 1.11 0 0 1 1.523 0l5.924 5.678c.42.403.42 1.056 0 1.46z"
+                  fill="#fff"></path>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div class="popup" role="dialog" aria-modal="true">
+    <div class="popup__container" role="document">
+      <button class="popup__close" aria-label="Закрыть попап">x</button>
+      <img class="popup__image" src="./def-ava.png" alt="Увеличенное изображение для просмотра">
+    </div>
+  </div>
+
+  <template class="chat__user-template">
+    <li class="chat__user">
+      <img class="chat__user-avatar chat__user-avatar--mini" data-user-avatar src="./def-ava.png" alt="аватарка">
+      <p class="chat__user-name" data-user-name>Имя</p>
+    </li>
+  </template>
+
+  <template class="chat__message-template">
+    <li class="chat__message">
+      <div class="chat__message-avatar">
+        <img class="chat__user-avatar chat__user-avatar--mini" data-user-avatar src="./def-ava.png" alt="аватарка">
+      </div>
+      <div class="chat__message-content">
+        <div class="chat__message-header">
+          <p class="chat__message-user" data-user-name>Имя</p>
+        </div>
+        <div class="chat__message-body">
+          <p class="chat__message-text" data-message-text>Текст</p>
+        </div>
+        <span class="chat__message-time" data-message-time></span>
+      </div>
+    </li>
+  </template>
+
+  <template class="chat__image-template">
+    <div class="chat__image">
+      <p class="chat__image-title">Прикрепленное изображение:</p>
+      <img class="chat__image-preview" src="" alt="изображение, которое прикрепил пользователь">
+    </div>
+  </template>
+</body>
+
+</html>

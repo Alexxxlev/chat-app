@@ -1,0 +1,44 @@
+.popup {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.popup--open {
+  display: flex;
+}
+
+.popup__close {
+  display: block;
+
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  font-size: 30px;
+  color: var(--secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup__close:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.popup__container {
+  margin: 50px;
+  position: relative;
+}
+
+.popup__image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}

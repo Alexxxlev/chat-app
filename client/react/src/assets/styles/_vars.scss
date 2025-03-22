@@ -1,0 +1,21 @@
+:root {
+  --sidebar-width: 250px;
+  --chat-header-height: 50px;
+  --chat-composer-height: 112px;
+  --chat-current-user-height: 144px;
+
+  /* colors */
+  --primary: #5e503f;
+  --secondary: #faf3e0;
+  --text: #333;
+  --bg-color: #f9fbff;
+  --btn-bg-hover: #43392c;
+  --border-color: #e6ccb2;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 220px;
+    --chat-current-user-height: 116px;
+  }
+}
