@@ -1,5 +1,5 @@
 const url =
-  import.meta.env.NODE_ENV === "prod"
+  import.meta.env.VITE_NODE_ENV === "prod"
     ? import.meta.env.VITE_SOCKET_URL
     : import.meta.env.VITE_LOCAL_SOCKET_URL;
 
