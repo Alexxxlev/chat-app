@@ -1,5 +1,7 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
+import "dotenv/config"; // Подключение переменных окружения
+import moment from "moment-timezone";
 import { socketOptions } from "./constants.js";
 import {
   handleUserJoin,
@@ -9,14 +11,8 @@ import {
   sendAllUsers,
 } from "./socket-functions.js";
 
-import "dotenv/config"; // Подключение переменных окружения
-
 // Утилита для генерации текущего времени
-const getCurrentTime = () =>
-  new Date().toLocaleTimeString("ru-RU", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+const getCurrentTime = () => moment.tz("Europe/Moscow").format("HH:mm");
 
 // Инициализация сервера
 const server = createServer();
