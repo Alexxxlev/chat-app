@@ -19,6 +19,7 @@ const Chat = () => {
 
   const fileInputRef = useRef(null);
   const messagesEndRef = useRef(null);
+  const [inputKey, setInputKey] = useState(Date.now());
 
   // Подключаем сокет при монтировании
   useEffect(() => {
@@ -28,7 +29,16 @@ const Chat = () => {
 
   // Авто-прокрутка вниз при новом сообщении
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const scrollToBottom = () => {
+      messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    };
+
+    const timeout = setTimeout(scrollToBottom, 100);
+
+    return () => clearTimeout(timeout);
   }, [messages]);
 
   // Обработчик выбора файла
@@ -41,6 +51,7 @@ const Chat = () => {
       dispatch(setImage(reader.result));
       dispatch(setSrcImg(URL.createObjectURL(file)));
       setFileName(file.name);
+      setInputKey(Date.now());
     };
     reader.readAsDataURL(file);
   };
@@ -143,6 +154,7 @@ const Chat = () => {
                   </svg>
                 </label>
                 <input
+                  key={inputKey}
                   className="chat__file-input"
                   id="send-image"
                   type="file"

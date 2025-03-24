@@ -112,10 +112,12 @@ const resetMessageInput = (newMessage) => {
 
 // Функция для прокрутки списка сообщений в самый низ
 const scrollToBottom = () => {
-  htmlListMessageWrapper.scroll({
-    top: htmlListMessageWrapper.scrollHeight,
-    behavior: "smooth",
-  });
+  setTimeout(() => {
+    htmlListMessageWrapper.scroll({
+      top: htmlListMessageWrapper.scrollHeight,
+      behavior: "smooth",
+    });
+  }, 100);
 };
 
 // === WebSocket ===
