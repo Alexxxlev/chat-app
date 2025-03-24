@@ -104,8 +104,8 @@ export const handleChatMessage = (socket, users, io, msg) => {
       id: user.id,
       name: user.name,
       avatar: user.avatar,
-      message: msg.message,
-      imageFile: msg.imageFile,
+      message: msg.message || " ",
+      imageFile: msg.imageFile || " ",
       messageTime: msg.messageTime,
     };
 

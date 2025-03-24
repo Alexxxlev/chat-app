@@ -31,7 +31,7 @@ const Message = ({
           <p className="chat__message-user">{userName}</p>
         </div>
         <div className="chat__message-body">
-          <p className="chat__message-text">{messageText}</p>
+          {messageText && <p className="chat__message-text">{messageText}</p>}
         </div>
         <span className="chat__message-time">{messageTime}</span>
 
